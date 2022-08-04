@@ -185,8 +185,7 @@ a {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 2fr auto;
-        grid-template-areas: 
-        "grid_header_index grid_header_index"
+        grid-template-areas:
         "main_index main_index"
         "footer_main footer_main";
     }
@@ -232,7 +231,6 @@ a {
         grid-row: 2fr auto;
         grid-template-rows: 2fr auto;
         grid-template-areas: 
-        "grid_header_about grid_header_about"
         "main_about main_about"
         "footer_main footer_main";
     }
