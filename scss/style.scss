@@ -7,31 +7,45 @@
     list-style: none;
 }
 
-body {
+body{
     font-family: 'Roboto', sans-serif;
     background-color: black;
     color: azure;
-}
 
-li {
-    display: inline;
-    padding: 10px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-}
+    li{
+        display: inline;
+        padding: 10px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+    }
 
-ul {
-    list-style: none;
-}
+    ul{
+        list-style: none;
+    }
 
-a {
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    display: inline-block;
-    border: none;
+    a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+    }
+}
+/*------------Extend--------------*/
+.main_index {
+    background-color: black;
+    background-image: url();
+    position: sticky;
+}
+/*------------Mixin---------------*/
+    @mixin Color ($font_color , $size , $font_fam , $background_color) {
+    color: $font_color;
+    font-size: $size;
+    font-family: $font_fam;
+    background-color: $background_color;
+
 }
 
 /*------------Footer--------------*/
@@ -58,7 +72,7 @@ a {
 }
 
 .footer_text {
-    color: aliceblue;
+    @include Color(white, 20px , Roboto , black );
 }
 
 /*------------Main_Index---------------*/
@@ -104,9 +118,7 @@ a {
 /*---------------About------------*/
 
 .main_about{
-    background-color: black;
-    background-image: url();
-    position: sticky;
+    @extend .main_index;
 }
 
 .div_about {
@@ -142,9 +154,7 @@ a {
 /*---------------Gallery-----------*/
 
 .main_gallery {
-    background-color: black;
-    background-image: url();
-    position: sticky;
+    @extend .main_index;
 }
 
 
@@ -160,9 +170,7 @@ a {
 /*----------------Contact-------------*/
 
 .main_contact {
-    background-color: black;
-    background-image: url();
-    position: sticky;
+    @extend .main_index;
 }
 
 .form_div {
@@ -334,7 +342,3 @@ a {
     }
     
 }
- $primary-color: black;
- body{
-    background-color: $primary-color;
- }

@@ -12,19 +12,16 @@ body {
   background-color: black;
   color: azure;
 }
-
-li {
+body li {
   display: inline;
   padding: 10px;
   align-items: center;
   text-align: center;
 }
-
-ul {
+body ul {
   list-style: none;
 }
-
-a {
+body a {
   display: block;
   padding: 20px;
   text-decoration: none;
@@ -32,6 +29,15 @@ a {
   border: none;
 }
 
+/*------------Extend--------------*/
+.main_index, .main_contact, .main_gallery, .main_about {
+  background-color: black;
+  background-image: url();
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/*------------Mixin---------------*/
 /*------------Footer--------------*/
 .footer_main {
   display: flex;
@@ -56,11 +62,14 @@ a {
 }
 
 .footer_text {
-  color: aliceblue;
+  color: white;
+  font-size: 20px;
+  font-family: Roboto;
+  background-color: black;
 }
 
 /*------------Main_Index---------------*/
-.main_index {
+.main_index, .main_contact, .main_gallery, .main_about {
   background-color: black;
   background-image: url();
   position: -webkit-sticky;
@@ -101,13 +110,6 @@ a {
 }
 
 /*---------------About------------*/
-.main_about {
-  background-color: black;
-  background-image: url();
-  position: -webkit-sticky;
-  position: sticky;
-}
-
 .div_about {
   display: flex;
   justify-content: center;
@@ -139,13 +141,6 @@ a {
 }
 
 /*---------------Gallery-----------*/
-.main_gallery {
-  background-color: black;
-  background-image: url();
-  position: -webkit-sticky;
-  position: sticky;
-}
-
 /*----------------Discography----------*/
 .main_discography {
   background-color: black;
@@ -155,13 +150,6 @@ a {
 }
 
 /*----------------Contact-------------*/
-.main_contact {
-  background-color: black;
-  background-image: url();
-  position: -webkit-sticky;
-  position: sticky;
-}
-
 .form_div {
   width: 500px;
   height: 500px;
@@ -184,7 +172,7 @@ a {
     grid-template-rows: 2fr auto;
     grid-template-areas: "main_index main_index" "footer_main footer_main";
   }
-  .main_index {
+  .main_index, .main_about, .main_gallery, .main_contact {
     grid-row: 3;
     grid-column: 1;
     -ms-grid-column-span: 2;
@@ -316,7 +304,4 @@ a {
     flex-direction: column;
     justify-content: space-between;
   }
-}
-body {
-  background-color: black;
 }/*# sourceMappingURL=style.css.map */
