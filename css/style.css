@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.main_index, .main_contact, .main_gallery, .main_about {
+  background-color: black;
+  background-image: url(/Img/Assets/Bowie_background.jpg);
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,15 +36,6 @@ body a {
   border: none;
 }
 
-/*------------Extend--------------*/
-.main_index, .main_contact, .main_gallery, .main_about {
-  background-color: black;
-  background-image: url(/Img/Assets/Bowie_background.jpg);
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-/*------------Mixin---------------*/
 /*------------Footer--------------*/
 .footer_main {
   display: flex;
@@ -71,7 +69,7 @@ body a {
 /*------------Main_Index---------------*/
 .main_index, .main_contact, .main_gallery, .main_about {
   background-color: black;
-  background-image: url();
+  background-image: url(../Img/Assets/Bowie_background.jpg);
   position: -webkit-sticky;
   position: sticky;
 }
@@ -142,6 +140,12 @@ body a {
 }
 
 /*---------------Gallery-----------*/
+.gallery_media {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 /*----------------Discography----------*/
 .main_discography {
   background-color: black;
@@ -152,13 +156,15 @@ body a {
 
 /*----------------Contact-------------*/
 .form_div {
+  display: flex;
+  justify-content: right;
   width: 500px;
   height: 500px;
 }
 
 .form_contact {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -171,7 +177,7 @@ body a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr auto;
-    grid-template-areas: "main_index main_index" "footer_main footer_main";
+    grid-template-areas: "grid_header_index grid_header_index" "main_index main_index" "footer_main footer_main";
   }
   .main_index, .main_about, .main_gallery, .main_contact {
     grid-row: 3;
@@ -213,7 +219,7 @@ body a {
     grid-template-columns: 1fr 1fr;
     grid-row: 2fr auto;
     grid-template-rows: 2fr auto;
-    grid-template-areas: "main_about main_about" "footer_main footer_main";
+    grid-template-areas: "grid_header_about grid_header_about" "main_about main_about" "footer_main footer_main";
   }
   .main_about {
     grid-row: 2;
@@ -233,6 +239,7 @@ body a {
   }
   .img_about {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
   }
   .grid_container_gallery {
@@ -241,7 +248,7 @@ body a {
     grid-template-columns: 1fr 1fr;
     grid-row: 2fr auto;
     grid-template-rows: 2fr auto;
-    grid-template-areas: "main_gallery main_gallery" "footer_main footer_main";
+    grid-template-areas: "grid_header_gallery grid_header_gallery" "main_gallery main_gallery" "footer_main footer_main";
   }
   .main_gallery {
     grid-row: 2;
@@ -265,7 +272,7 @@ body a {
     grid-template-columns: 1fr 1fr;
     grid-row: 2fr auto;
     grid-template-rows: 2fr auto;
-    grid-template-areas: "main_discography main discography" "footer_main footer_main";
+    grid-template-areas: "grid_header_discography grid_header_discography" "main_discography main discography" "footer_main footer_main";
   }
   .main_discography {
     grid-row: 2;
@@ -288,7 +295,7 @@ body a {
     grid-template-columns: 1fr 1fr;
     grid-row: 2fr auto;
     grid-template-rows: 2fr auto;
-    grid-template-areas: "main_contact main_contact" "footer_main footer_main";
+    grid-template-areas: "grid_header_contact grid_header_contact" "main_contact main_contact" "footer_main footer_main";
   }
   .main_contact {
     grid-row: 2;

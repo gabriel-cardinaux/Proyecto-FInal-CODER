@@ -1,0 +1,6 @@
+@mixin Color ($font_color , $size , $font_fam , $background_color) {
+    color: $font_color;
+    font-size: $size;
+    font-family: $font_fam;
+    background-color: $background_color;
+}

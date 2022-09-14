@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+@import "mixin";
+@import "extend";
 * {  margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,21 +34,6 @@ body{
         border: none;
     }
 }
-/*------------Extend--------------*/
-.main_index {
-    background-color: black;
-    background-image: url(/Img/Assets/Bowie_background.jpg);
-    position: sticky;
-}
-/*------------Mixin---------------*/
-    @mixin Color ($font_color , $size , $font_fam , $background_color) {
-    color: $font_color;
-    font-size: $size;
-    font-family: $font_fam;
-    background-color: $background_color;
-
-}
-
 /*------------Footer--------------*/
 .footer_main{
     display: flex;
@@ -78,7 +64,7 @@ body{
 /*------------Main_Index---------------*/
 .main_index {
     background-color: black;
-    background-image: url();
+    background-image: url(../Img/Assets/Bowie_background.jpg);
     position: sticky;
 
 }
@@ -157,6 +143,11 @@ body{
 .main_gallery {
     @extend .main_index;
 }
+.gallery_media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 
 /*----------------Discography----------*/
@@ -175,13 +166,15 @@ body{
 }
 
 .form_div {
+    display: flex;
+    justify-content: right;
     width: 500px;
     height: 500px;
 }
 
 .form_contact {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -195,6 +188,7 @@ body{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 2fr auto;
         grid-template-areas:
+        "grid_header_index grid_header_index"
         "main_index main_index"
         "footer_main footer_main";
     }
@@ -240,6 +234,7 @@ body{
         grid-row: 2fr auto;
         grid-template-rows: 2fr auto;
         grid-template-areas: 
+        "grid_header_about grid_header_about"
         "main_about main_about"
         "footer_main footer_main";
     }
@@ -261,6 +256,7 @@ body{
     }
     .img_about {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
     }
     .grid_container_gallery {
@@ -270,6 +266,7 @@ body{
         grid-row: 2fr auto;
         grid-template-rows: 2fr auto;
         grid-template-areas: 
+        "grid_header_gallery grid_header_gallery"
         "main_gallery main_gallery"
         "footer_main footer_main";
     }
@@ -296,6 +293,7 @@ body{
         grid-row: 2fr auto;
         grid-template-rows: 2fr auto;
         grid-template-areas: 
+        "grid_header_discography grid_header_discography"
         "main_discography main discography"
         "footer_main footer_main";
     }
@@ -323,6 +321,7 @@ body{
         grid-row: 2fr auto;
         grid-template-rows: 2fr auto;
         grid-template-areas: 
+        "grid_header_contact grid_header_contact"
         "main_contact main_contact"
         "footer_main footer_main";
     }
